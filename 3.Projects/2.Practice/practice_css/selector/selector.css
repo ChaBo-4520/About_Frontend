@@ -1,0 +1,36 @@
+/* selector {
+  property: value;
+} */
+/* universal tag */
+* {
+  color: green;
+}
+
+/* type selector */
+li {
+  color: blue;
+}
+/* id selector */
+#special {
+  color: pink;
+}
+li#special {
+  color: red;
+}
+/* class selector */
+.red {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+}
+/* state selector */
+button:hover {
+  color: red;
+  background-color: beige;
+}
+/* attribute selector */
+
+a[href^="www.naver"] {
+  /* href가 www.naver로 시작하는 a에 대해 적용 */
+  color: purple;
+}

@@ -1,0 +1,32 @@
+div {
+  border: solid 1px black;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+  background: red;
+  top: 75px;
+  left: 75px;
+}
+
+.container {
+  border: solid 1px black;
+  background: #ddd;
+  position: relative;
+}
+.absolute {
+  background: beige;
+  position: absolute;
+}
+
+.fixed {
+  background: beige;
+  position: fixed;
+}
+.relative {
+  background: beige;
+  position: relative;
+}
+.sticky {
+  background: beige;
+  position: sticky;
+}
