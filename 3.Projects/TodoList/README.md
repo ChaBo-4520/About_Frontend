@@ -1,5 +1,7 @@
 # ToDoList를 만들어보자!
 
+## [ToDoList](./index.html)
+
 **개발기간** : 2021.06.11~12
 
 **사용기술** : HTML, Css, JavaScript
@@ -16,7 +18,7 @@
 
 ## 참고디자인
 
-[링크](https://todomvc.com/examples/vanillajs/)
+[https://todomvc.com/examples/vanillajs/](https://todomvc.com/examples/vanillajs/)
 
 ## 기능 설명
 
