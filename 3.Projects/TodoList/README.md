@@ -1,6 +1,6 @@
 # ToDoList를 만들어보자!
 
-## [ToDoList](./index.html)
+## [ToDoList](https://chabo-4520.github.io/TodoList_Javascript/)
 
 **개발기간** : 2021.06.11~12
 
