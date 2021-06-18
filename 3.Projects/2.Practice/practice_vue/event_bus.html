@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div
+      id="app"
+      style="
+        display: flex;
+        width: 50vw;
+        height: 100vh;
+        justify-content: space-between;
+      "
+    >
+      <div id="user1">
+        <p>User1</p>
+        <p>받은 메세지 : {{ recieveMsg }}</p>
+        <input v-model="sendMsg" type="text" />
+        <button @click="publishEvent">publish</button>
+      </div>
+      <div id="user2">
+        <p>User2</p>
+        <p>받은 메세지 : {{ recieveMsg }}</p>
+        <input v-model="sendMsg" type="text" />
+        <button @click="publishEvent">publish</button>
+      </div>
+    </div>
+    <script>
+      var eventBus = new Vue();
+      var User1 = new Vue({
+        el: "#user1",
+        data() {
+          return {
+            sendMsg: "",
+            recieveMsg: "",
+          };
+        },
+        methods: {
+          publishEvent() {
+            eventBus.$emit("message1", this.sendMsg);
+          },
+          setText(text) {
+            this.recieveMsg = text;
+          },
+        },
+        created() {
+          const v = this;
+          eventBus.$on("message2", function (data) {
+            v.setText(data);
+          });
+        },
+      });
+
+      var User2 = new Vue({
+        el: "#user2",
+        data() {
+          return {
+            sendMsg: "",
+            recieveMsg: "",
+          };
+        },
+        methods: {
+          publishEvent() {
+            eventBus.$emit("message2", this.sendMsg);
+          },
+          setText(text) {
+            this.recieveMsg = text;
+          },
+        },
+        created() {
+          const v = this;
+          eventBus.$on("message1", function (data) {
+            v.setText(data);
+          });
+        },
+      });
+    </script>
+  </body>
+</html>
