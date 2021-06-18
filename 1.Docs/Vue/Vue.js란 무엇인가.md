@@ -243,6 +243,19 @@ new Vue({
 eventBus.$emit("refresh",10);
 ```
 
+이벤트를 받을 컴포넌트에서 `$on()` 이벤트 수신
+
+```js
+// 이벤트 버스 이벤트를 일반적으로 라이프 사이클 함수에서 수신
+new Vue({
+    created: function(){
+        eventBus.$on("refresh", function(data){
+            console.log(data);
+        })
+    }
+});
+```
+
 
 
 
