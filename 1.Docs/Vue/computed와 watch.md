@@ -72,7 +72,7 @@ methods:{
 
 캐싱을 원하는 경우 computed를 사용하고 캐싱을 원하지 않는 경우 methods를 사용할 것.
 
-### computed속성의 seter함수
+### computed속성의 setter함수
 
 computed 속성은 기본적으로 getter 함수만 가지고 있지만, 필요한 경우 setter 함수를 만들어 쓸 수 있다.
 
@@ -207,6 +207,16 @@ var watchExampleVM = new Vue({
 ```
 
 위와 같이 watch를 사용하면 question이 변경될 때 마다 최종 응답을 얻기 전까지 중간 상태를 설정할 수 있다. 또한, 비동기 연산을 수행할 수 있다?(조사필요)
+
+
+
+computed에서는 computed속성으로 설정한 대상을 실제 템플릿에 포함하지 않으면 computed 대상안의 함수가 실행되지 않는다.
+
+**결론**
+
+computed는 이미 정의된 계산식에 따라 결과값을 반환할 때 사용하고, watch는 특정 조건에서 함수를 실행시키기 위한 트리거로서 사용한다.
+
+#### deep옵션
 
 
 

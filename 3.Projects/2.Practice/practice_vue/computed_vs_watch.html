@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>computed_vs_watch</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ count }}</p>
+      <button @click="count--">카운트감소</button>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data() {
+          return {
+            count: 3,
+          };
+        },
+        watch: {
+          count(newVal) {
+            if (newVal == 0) {
+              alert("값이 0이 되었습니다!");
+              this.count = 3;
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
