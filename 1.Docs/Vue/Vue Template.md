@@ -13,6 +13,23 @@
 HTMLCopy
 ```
 
+**원시 HTML**
+
+이중 중괄호(mustaches)는 HTML이 아닌 일반 텍스트로 데이터를 해석합니다. 실제 HTML을 출력하려면 `v-html` 디렉티브를 사용해야한다.
+
+```html
+<p>Using mustaches: {{ rawHtml }}</p>
+<p>Using v-html directive: <span v-html="rawHtml"></span></p>
+```
+
+<img src="../../2.Pictures/v-html.jpg">
+
+`span`의 내용은 `rawHtml`로 대체됩니다. 이 때 데이터 바인딩은 무시됩니다. Vue는 문자열 기반 템플릿 엔진이 아니기 때문에 `v-html`을 이용해 템플릿을 사용할 수 없습니다. 이와 달리 컴포넌트는 UI 재사용 및 구성을 위한 기본 단위로 사용하는 것을 추천한다.
+
+\***주의\*** *웹사이트에서 임의의 HTML을 동적으로 렌더링하려면 XSS으로 쉽게 이어질 수 있으므로 매우 위험할 가능성이 있다. 신뢰할 수 있는 콘텐츠에서만 HTML 보간을 사용하고 사용자가 제공한 콘텐츠에서는 **절대** 사용하면 안된다.*
+
+
+
 #### Directive
 
 HTML 태그의 속성에 `v-` 접두사가 붙은 특별한 속성으로 화면의 DOM 조작을 쉽게할 수 있는 문법들을 제공한다.
@@ -112,6 +129,26 @@ Vue.component('todo-item', {
 ```
 
 parent단의 컴포넌트인 todo-item의 props todo에 item값을 전달한다.
+
+
+
+#### 동적 전달인자
+
+ Javascript 표현식을 대괄호로 묶어 디렉티브의 Argument로 사용하는것도 가능하다.
+
+```html
+<a v-bind:[attributeName]="url"> ... </a>
+```
+
+여기서 `attributeName`가 `"href"`라면 `attributeName`은 동적 변환되어, v-bind:href와 같이 동작한다.
+
+```html
+<a v-on:[eventName]="doSomething"> ... </a>
+```
+
+**동적 전달인자 값의 제약**
+
+동적 전달인자는, `null`을 제외하고는 string으로 변환될 것으로 예상합니다. 특수 값인 `null`은 명시적으로 바인딩을 제거하는데 사용됩니다. 그 외의 경우, string이 아닌 값은 경고를 출력합니다.
 
 #### Filters
 
