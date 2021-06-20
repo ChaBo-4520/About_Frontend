@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>watch_deep</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ count.value }}</p>
+      <button @click="decrease">카운트감소</button>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data() {
+          return {
+            count: {
+              value: 3,
+            },
+          };
+        },
+        methods: {
+          decrease() {
+            this.count.value--;
+          },
+        },
+        watch: {
+          count: {
+            deep: true,
+            handler(newVal) {
+              if (newVal.value == 0) {
+                alert("값이 0이 되었습니다!");
+                this.count.value = 3;
+              }
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

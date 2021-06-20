@@ -97,7 +97,7 @@ computed: {
 
 ### Watch
 
-Vue의 인스턴스의 데이터 변경을 관찰하고 이에 반응하는 속성이다. 하지만 일반적으로 computed를 사용하는 것이 좋다.
+Vue의 인스턴스의 데이터 변경을 관찰하고 이에 반응하는 속성이다. 하지만 일반적으로 computed를 사용하는 것이 좋다. watch는 parameter로 변경된 값을 받는다.
 
 #### computed vs watch
 
@@ -218,7 +218,57 @@ computed는 이미 정의된 계산식에 따라 결과값을 반환할 때 사�
 
 #### deep옵션
 
+```html
+<div id="app">
+    <p>{{ count.value }}</p>
+    <button @click="decrease">카운트감소</button>
+</div>
+```
 
+```js
+data() {
+    return {
+        count: {
+            value: 3,
+        },
+    };
+},
+```
+
+watch속성이 적용된 값이 object일 경우 object안의 값이 변경되는 경우 감지하지 못하는 문제점이 있다.
+
+```js
+watch: {
+    count(newVal){
+        if (newVal.value == 0) {
+            alert("값이 0이 되었습니다!");
+            this.count.value = 3;
+        }
+    },
+},
+```
+
+위와 같이 코드를 작성하게 되면 count.value값이 바뀌더라도 watch가 동작하지 않는다.
+
+```js
+...
+
+watch: {
+    count: {
+        deep: true,
+        handler(newVal) {
+            if (newVal.value == 0) {
+                alert("값이 0이 되었습니다!");
+                this.count.value = 3;
+            }
+        },
+    },
+},
+    
+...
+```
+
+위와 같이 deep 옵션을 true로 지정하고 handler을 통해 동작을 지정하면 내부값이 바뀌더라도 이를 감지할 수 있다.
 
 
 
