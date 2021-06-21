@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v-if-with-key</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <template v-if="loginType === 'username'">
+        <p>사용자 이름</p>
+        <input placeholder="사용자 이름을 입력하세요" />
+      </template>
+      <template v-else>
+        <p>이메일</p>
+        <input placeholder="이메일 주소를 입력하세요" />
+      </template>
+      <button @click="changeMode">로그인 유형 변경</button>
+    </div>
+
+    <div id="app2">
+      <template v-if="loginType === 'username'">
+        <p>사용자 이름</p>
+        <input placeholder="사용자 이름을 입력하세요" key="username-input" />
+      </template>
+      <template v-else>
+        <p>이메일</p>
+        <input placeholder="이메일 주소를 입력하세요" key="email-input" />
+      </template>
+      <button @click="changeMode">로그인 유형 변경</button>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data() {
+          return {
+            loginType: "username",
+          };
+        },
+        methods: {
+          changeMode() {
+            this.loginType =
+              this.loginType === "username" ? "email" : "username";
+          },
+        },
+      });
+
+      let vm2 = new Vue({
+        el: "#app2",
+        data() {
+          return {
+            loginType: "username",
+          };
+        },
+        methods: {
+          changeMode() {
+            this.loginType =
+              this.loginType === "username" ? "email" : "username";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
