@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event_handling</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul @click.passive="test2">
+        <li><button @click="test1">클릭</button></li>
+        <li><button @click="test1">클릭</button></li>
+        <li><button @click="test1">클릭</button></li>
+        <li><button @click="test1">클릭</button></li>
+      </ul>
+      <form @submit.prevent="test">
+        <input type="text" />
+      </form>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data() {
+          return {};
+        },
+        methods: {
+          test1() {
+            console.log("button");
+          },
+          test2() {
+            console.log("ul");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
