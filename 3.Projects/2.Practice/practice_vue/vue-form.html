@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>vue-form</title>
+  </head>
+  <body>
+    <div id="app">
+      <span>한 줄 메세지</span>
+      <p>메세지 : {{ message }}</p>
+      <input type="text" v-model="message" placeholder="여기를 수정해보세요" />
+
+      <span>여러줄 메세지</span>
+      <p style="white-space: pre-line">메세지 : {{ moreMessage }}</p>
+      <textarea
+        v-model="moreMessage"
+        placeholder="여기를 수정해보세요"
+      ></textarea>
+      <p>체크박스</p>
+      <input type="checkbox" id="checkbox" v-model="checked" />
+      <label for="checkbox">{{ checked }}</label>
+      <p>여러개의 체크박스</p>
+      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
+      <label for="jack">Jack</label>
+      <input type="checkbox" id="john" value="John" v-model="checkedNames" />
+      <label for="john">John</label>
+      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
+      <label for="mike">Mike</label>
+      <br />
+      <span>체크한 이름: {{ checkedNames }}</span>
+      <p>라디오버튼</p>
+      <input type="radio" id="one" value="One" v-model="picked" />
+      <label for="one">One</label>
+      <br />
+      <input type="radio" id="two" value="Two" v-model="picked" />
+      <label for="two">Two</label>
+      <br />
+      <span>선택: {{ picked }}</span>
+      <p>셀렉트</p>
+      <select v-model="selected">
+        <option disabled value="">Please select one</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+      <span>선택함: {{ selected }}</span>
+
+      <select v-model="selected">
+        <option v-for=" option in options" :value="option.value">
+          {{ option.text}}
+        </option>
+      </select>
+      <span>선택함: {{ selected }}</span>
+      <input v-model.number="age" type="number" />
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data() {
+          return {
+            message: "",
+            moreMessage: "",
+            checked: false,
+            checkedNames: [],
+            picked: "",
+            selected: "",
+            options: [
+              { text: "One", value: "A" },
+              { text: "Two", value: "B" },
+              { text: "Three", value: "C" },
+            ],
+            age: "",
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

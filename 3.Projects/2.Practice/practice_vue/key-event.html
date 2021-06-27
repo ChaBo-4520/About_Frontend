@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>key-event</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>ctrl + {{ text }}를 입력했습니다.</h1>
+      <input @keyup.ctrl="clear" type="text" />
+      <button>확인</button>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data() {
+          return {
+            text: "",
+          };
+        },
+        methods: {
+          clear(event) {
+            this.text = event.key;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

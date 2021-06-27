@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>vue-component-v-model</title>
+  </head>
+  <body>
+    <div id="app">
+      <msg-box :msg_child.sync="msg_parent"></msg-box>
+      <h4>parent</h4>
+      <input type="text" v-model="msg_parent" />
+    </div>
+    <script>
+      Vue.component("msg-box", {
+        template: `<div>
+          <span>Hi {{ msg_child }}</span>
+          <h4>child</h4>
+          <input type="text" :value="msg_child" @input="updateMsg_child"/>
+          </div>
+        `,
+        props: ["msg_child"],
+        methods: {
+          updateMsg_child(event) {
+            this.$emit("update:msg_child", event.target.value);
+          },
+        },
+      });
+      let vm = new Vue({
+        el: "#app",
+        data() {
+          return {
+            msg_parent: "Hello!",
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

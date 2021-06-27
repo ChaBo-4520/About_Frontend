@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>vue-event-interface</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ total }}</p>
+      <button-counter @increment="incrementTotal"></button-counter>
+      <button-counter @increment="incrementTotal"></button-counter>
+    </div>
+    <script>
+      Vue.component("button-counter", {
+        template: "<button @click='incrementCounter'>{{ counter }}</button>",
+        data() {
+          return {
+            counter: 0,
+          };
+        },
+        methods: {
+          incrementCounter() {
+            this.counter += 1;
+            this.$emit("increment");
+          },
+        },
+        emits: ["increment"],
+      });
+      let vm = new Vue({
+        el: "#app",
+        data() {
+          return {
+            total: 0,
+          };
+        },
+        methods: {
+          incrementTotal() {
+            this.total += 1;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
