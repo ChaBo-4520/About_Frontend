@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>keep-alive</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="selectNum(1)">1</button>
+      <button @click="selectNum(2)">2</button>
+      <button @click="selectNum(3)">3</button>
+      <keep-alive>
+        <component :is="selectedComponent"></component>
+      </keep-alive>
+    </div>
+    <script>
+      Vue.component("Home1", {
+        template: `
+          <div>
+            <h2>Home1</h2>
+            <input type="radio" name=1>
+            <input type="radio" name=1>
+            <input type="radio" name=1>
+          </div>
+        `,
+      });
+      Vue.component("Home2", {
+        template: `
+          <div>
+            <h2>Home2</h2>
+            <input type="radio" name=2>
+            <input type="radio" name=2>
+            <input type="radio" name=2>
+          </div>
+        `,
+      });
+      Vue.component("Home3", {
+        template: `
+          <div>
+            <h2>Home3</h2>
+            <input type="radio" name=3>
+            <input type="radio" name=3>
+            <input type="radio" name=3>
+          </div>
+        `,
+      });
+      let vm = new Vue({
+        el: "#app",
+        data() {
+          return {
+            selectedComponent: "Home1",
+          };
+        },
+        methods: {
+          selectNum(num) {
+            this.selectedComponent = "Home" + num;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
