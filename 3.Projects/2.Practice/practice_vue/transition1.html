@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>transition1</title>
+  </head>
+  <body>
+    <div id="app" style="display: flex; flex-direction: row">
+      <div>
+        <button @click="show1=!show1">Toggle1</button>
+        <transition name="fade">
+          <p v-if="show1">Hello</p>
+        </transition>
+      </div>
+      <div>
+        <button @click="show2=!show2">Toggle2</button>
+        <transition name="slide-fade">
+          <p v-if="show2">Hello</p>
+        </transition>
+      </div>
+      <div>
+        <button @click="show3 = !show3">Toggle show</button>
+        <transition name="bounce">
+          <p v-if="show3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            facilisis enim libero, at lacinia diam fermentum id. Pellentesque
+            habitant morbi tristique senectus et netus.
+          </p>
+        </transition>
+      </div>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data() {
+          return {
+            show1: true,
+            show2: true,
+            show3: true,
+          };
+        },
+      });
+    </script>
+    <style>
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: opacity 0.5s;
+      }
+      .fade-enter,
+      .fade-leave-to {
+        opacity: 0;
+      }
+      .slide-fade-enter-active {
+        transition: all 0.3s ease;
+      }
+      .slide-fade-leave-active {
+        transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+      }
+      .slide-fade-enter,
+      .slide-fade-leave-to {
+        transform: translateX(10px);
+        opacity: 0;
+      }
+
+      .bounce-enter-active {
+        animation: bounce-in 0.5s;
+      }
+      .bounce-leave-active {
+        animation: bounce-in 0.5s reverse;
+      }
+      @keyframes bounce-in {
+        0% {
+          transform: scale(0);
+        }
+        50% {
+          transform: scale(1.5);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </body>
+</html>
