@@ -31,8 +31,9 @@ let router = new VueRouter({
 });
 
 let app = new Vue({
+    el:"#app",
     router,
-}).$mount("#app");
+})
 ```
 
 - new VueRouter인스턴스를 생성한다.
@@ -40,7 +41,7 @@ let app = new Vue({
   - mode:'history' 
     - Vue 라우터는 기본적으로 `'루트 URL'/#/'라우터 이름'`의 구조로 되어 있다.
     - 이 옵션을 사용하면 라우터의 기본구조에서 #을 뺀다.
-- 생성한 Vuerouter인스턴스를 새로운 Vue인스턴스 안에 넣어 app에 마운트 한다.
+- Vue인스턴스의 `router`속성에 Vue 라우터 객체를 넘겨준다.
 
 ```html
 <div id="app">
