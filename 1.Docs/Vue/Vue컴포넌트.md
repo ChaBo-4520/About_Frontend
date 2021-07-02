@@ -4,6 +4,13 @@
 
 <img src="C:\Users\MSI\Desktop\Career\Study\SW_Study\About_Frontend\2.Pictures\components.png">
 
+| 옵션     | 설명                                                         | 예제                                                         | 비고                                                         |
+| -------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| template | 해당 컴포넌트의 DOM형태를 구성                               | `template : '<div>hello</div>'`                              |                                                              |
+| data     | 컴포넌트가 바라보는 data 객체를 Function 형태로 지정         | `data : function() {return {msg: "hello"}}`                  | 객체를 직접 사용할 수 없고 Functio으로 객체를 리턴시켜 사용해야함 |
+| props    | 자식 컴포넌트에게 값을 전달하기 위해 props 배열 또는 객체를 지정하여 사용 | `props: ['msg']`                                             | `props: {msg: {type: String, default: 'Hello'}}`             |
+| methods  | 자식 컴포넌트에서 부모 컴포넌트로 이벤트 함수로 값을 넘길때 주로 사용함 | `methods: {eventCl: function(e) {this.$emit('parentPn', e.target.innerText);}}` |                                                              |
+
 컴포넌트 등록은 아래와 같은 코드로 생성 가능하다.
 
 ```html
