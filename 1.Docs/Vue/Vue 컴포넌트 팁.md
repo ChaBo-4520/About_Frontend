@@ -28,3 +28,54 @@ SPA특성 상 컴포넌트로 페이지를 구성한다고 해도 Style은 공�
 </style>
 ```
 
+#### 슬롯
+
+슬롯은 부모 컴포넌트에서 자식 컴포넌트로 HTML마크업을 전달할 수 있게 해주는 기능이다.
+
+```html
+// 자식 컴포넌트 파일 : slot-Child.vue
+<template>
+  <div>
+    <p>
+      만나면 이렇게 인사하세요!
+    </p>
+    <slot> </slot>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+```
+
+```html
+// 부모 컴포넌트 파일 : slot-Parent.vue
+<template>
+  <div>
+    <slot-child>
+      <div>
+        {{ AA }}
+      </div>
+    </slot-child>
+    <slot-child>
+      <div>
+        {{ BB }}
+      </div>
+    </slot-child>
+  </div>
+</template>
+
+<script>
+import slotChild from "../components/slot-Child.vue";
+export default {
+  components: { slotChild },
+  data() {
+    return {
+      AA: "안녕하세요!",
+      BB: "반갑습니다!",
+    };
+  },
+};
+</script>
+```
+

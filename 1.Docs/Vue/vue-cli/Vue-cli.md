@@ -39,21 +39,21 @@ vue create hello-vue-cli
 
 프로젝트를 생성할 때 default, Manually중 포함할 라이브러리 옵션을 선택할 수 있다.
 
-<img src="../../2.Pictures/vue-cli-setting1.jpg">
+<img src="../../../2.Pictures/vue-cli-setting1.jpg">
 
 **Manually**
 
-<img src="../../2.Pictures/vue-cli-setting2.jpg">
+<img src="../../../2.Pictures/vue-cli-setting2.jpg">
 
 **default로 프로젝트를 생성한 결과**
 
-<img src="../../2.Pictures/vue-create-project.gif">
+<img src="../../../2.Pictures/vue-create-project.gif">
 
-<img src="../../2.Pictures/vue-create-project.jpg">
+<img src="../../../2.Pictures/vue-create-project.jpg">
 
 설치완료 후 다음과 같은 폴더 구조가 생성된다.
 
-<img src="../../2.Pictures/vue-cli-folder.jpg">
+<img src="../../../2.Pictures/vue-cli-folder.jpg">
 
 - node_modules : 모든 nodejs의 프로젝트가 공통으로 가지는 폴더로 실제 설치된 모듈이 저장되는 폴더이다.(손댈필요 X)
 - public : 프로젝트를 배포할 때 필요한 파일들이 들어 있는 곳. (손댈필요 X)
@@ -62,9 +62,9 @@ vue create hello-vue-cli
 
 **hello-vue-cli 폴더로 이동해 npm run serve실행한 결과**
 
-<img src="../../2.Pictures/npm_run_serve1.jpg">
+<img src="../../../2.Pictures/npm_run_serve1.jpg">
 
-<img src="../../2.Pictures/npm_run_serve2.jpg">
+<img src="../../../2.Pictures/npm_run_serve2.jpg">
 
 
 
@@ -74,5 +74,5 @@ vue create hello-vue-cli
 vue ui
 ```
 
-<img src="../../2.Pictures/vue-cli_GUI.jpg">
+<img src="../../../2.Pictures/vue-cli_GUI.jpg">
 
