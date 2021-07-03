@@ -1,12 +1,18 @@
 <template>
   <div>
     <slot-child>
-      <div>
+      <div slot="header">
+        {{ AA }}
+      </div>
+      <div slot="body">
         {{ AA }}
       </div>
     </slot-child>
     <slot-child>
-      <div>
+      <div slot="header">
+        {{ BB }}
+      </div>
+      <div slot="body">
         {{ BB }}
       </div>
     </slot-child>

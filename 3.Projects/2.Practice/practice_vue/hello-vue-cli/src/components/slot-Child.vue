@@ -3,7 +3,8 @@
     <p>
       만나면 이렇게 인사하세요!
     </p>
-    <slot> </slot>
+    <slot name="header"> </slot>
+    <slot name="body"> </slot>
   </div>
 </template>
 
