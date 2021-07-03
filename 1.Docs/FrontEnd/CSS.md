@@ -286,6 +286,135 @@ select{
   3. font-size는 em으로 지정하면, 어떤 컴포넌트 안에있는지 계산해야하므로 rem을 사용하는 것이 좋다.
   4. 반응형 CSS를 적용하기 위해 @media쿼리를 이용할 때, max-width를 px이 아닌 rem으로 지정해주는 것이 좋다.
 
+### 가상 클래스
+
+- 여러 태그 중에서 원하는 태그를 선택하기 위해 사용하는 선택자
+
+- 자주 사용하는 가상 클래스 종류
+  - `:hover`
+  - `:active`
+  - `:focus`
+  - `:visited`
+
+### 가상 요소
+
+- 내용의 일부만 선택해 스타일을 적용할 때 사용
+- 가상 클래스와 구별하기 위해 클래스 이름 앞에 콜론 두개(::)를 붙여 표시한다. 
+- 가상 요소는 **inline 요소**이므로 특정 영역을 갖기 위해서는 css에 **display:block;**을 사용한다.
+- 가장 많이 사용하는 가상 요소
+  - `::before`
+  - `::after`
+  - `::first-line`
+  - `::first-letter`
+
+#### 가상 요소 선택자 (가상 클래스 선택자) ::before, ::after
+
+- 내용의 앞과 뒤에 콘텐츠를 추가하고, 이 콘텐츠는 content=""라는 속성으로 정의한다.
+
+- 특정 요소의 앞(::before)이나 뒤(::after)에 지정한 내용(텍스트 또는 이미지)을 추가할 수 있다.
+
+- 가상 요소는 인라인 요소이다.
+
+- 구성
+
+  ```css
+  태그 or 클래스::(before or after){
+      content="",
+      style.....
+  }
+  ```
+
+**콘텐츠 추가(content="")**
+
+- 속성
+  - normal : 아무것도 표시하지 않음(기본)
+  - string : 문자열 생성
+  - image : 이미지나 비디오를 불러올 수 있으나 크기조절 불가능
+  - counter : 순서를 매길 수 있음
+  - none : 아무것도 표시안함
+  - attr : 해당 속성의 속성값 표시
+
+**예제**
+
+구분선 넣기
+
+```html
+<body>
+    <ul>
+        <li>로그인</li>
+        <li>회원가입</li>
+        <li>마이페이지</li>
+        <li>사이트맵</li>
+    </ul>
+</body>
+<style>
+    ul {
+        display: flex;
+    }
+    li {
+        list-style: none;
+        margin: 6px;
+    }
+    li::after {
+        content: "|";
+        color: #ccc;
+        margin-left: 10px;
+    }
+    li:last-child::after {
+        content: "";
+    }
+```
+
+<img src="../../2.Pictures/pseudo-class-before.jpg">
+
+**예제**
+
+인용문처럼 꾸미기
+
+```html
+<div class="box">
+    <div class="title">::before, ::after</div>
+    <div>
+        특정 요소의 앞이나 뒤에 지정한 내용(텍스트 또는 이미지)을 추가할 수
+        있다.
+    </div>
+</div>
+```
+
+```css
+.box {
+    max-width: 550px;
+    padding: 32px 36px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+.box::before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    border-top: 6px solid #cecece;
+    border-left: 6px solid #4a4a4a;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box::after {
+    content: "";
+    width: 26px;
+    height: 26px;
+    border-bottom: 6px solid #cecece;
+    border-right: 6px solid #4a4a4a;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+```
+
+<img src="../../2.Pictures/pseudo-class-before1.jpg">
+
 ### Tip
 
 - 반복되는 구조 생성방법
