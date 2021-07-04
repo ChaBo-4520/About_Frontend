@@ -1,11 +1,23 @@
 <template>
   <div class="wrapper">
-    <div class="header"></div>
-    <div class="body"></div>
+    <span>{{ title }}</span>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  props: {
+    title: String,
+  },
+};
 </script>
 
-<style></style>
+<style scoped>
+.wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 4em;
+}
+</style>

@@ -7,7 +7,7 @@
     </div>
     <ul id="menu">
       <li class="nav-button" @click="goVue1">Vue 실습 목록1</li>
-      <li class="nav-button">Vue 실습 목록2</li>
+      <li class="nav-button" @click="goVue2">Vue 실습 목록2</li>
     </ul>
     <ul id="sns">
       <li>
@@ -36,6 +36,9 @@ export default {
     goVue1() {
       // this.$router.push({ name: "slotParent" });
       this.$router.push("slotParent");
+    },
+    goVue2() {
+      this.$router.push("exDashBoard");
     },
   },
 };
