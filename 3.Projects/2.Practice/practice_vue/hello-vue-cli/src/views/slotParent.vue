@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import slotChild from "../components/slot-Child.vue";
+import slotChild from "../components/slotChild.vue";
 export default {
   components: { slotChild },
   data() {
