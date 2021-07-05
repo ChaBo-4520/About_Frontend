@@ -32,13 +32,13 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
-      selectedMenu: [0, 0, 0],
+      selectedMenu: [1, 0, 0],
     };
   },
   methods: {
     goHome() {
       // router를 import하고 router.push()
-      this.$router.push("/");
+      this.$router.push({ name: "Home" });
       this.selectedMenu = [0, 0, 0];
       this.selectedMenu[0] = 1;
 

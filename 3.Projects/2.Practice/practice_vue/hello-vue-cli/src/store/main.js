@@ -25,12 +25,12 @@ export default {
         name: "transition1",
       },
       {
-        title: "animation-with-watch2",
-        name: "animationWithWatch2",
+        title: "transition2",
+        name: "transition2",
       },
       {
-        title: "animation-with-watch2",
-        name: "animationWithWatch2",
+        title: "transition3",
+        name: "transition3",
       },
     ],
   },

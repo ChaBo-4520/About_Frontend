@@ -124,3 +124,17 @@ let app = new Vue({
 
 <img src="../../2.Pictures/namedview-nestedroutes.png">
 
+#### 현재 url을 reload해야 할 때
+
+페이지 이동시 현재 url과 같은 url을 push하면 에러가 발생한다. 이를 해결하기 위해 router.js에 해당 코드를 삽입하면 문제가 해결된다.
+
+```js
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(() => {
+    return window.location.reload();
+  });
+};
+```
+
+**공부필요**

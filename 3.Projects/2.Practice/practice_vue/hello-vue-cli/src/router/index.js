@@ -6,9 +6,19 @@ import animationWithWatch1 from "../components/examples/animationWithWatch1";
 import animationWithWatch2 from "../components/examples/animationWithWatch2";
 import staggeringList from "../components/examples/staggeringList";
 import transition1 from "../components/examples/transition1";
+import transition2 from "../components/examples/transition2";
+import transition3 from "../components/examples/transition3";
+import HelloWorld from "../components/HelloWorld";
 
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(() => {
+    return window.location.reload();
+  });
+};
 Vue.use(VueRouter);
 const routes = [
+  { path: "/", name: "Home", component: HelloWorld },
   { path: "/slotParent", name: "slot-Parent", component: slotParent },
   { path: "/exDashBoard", name: "ex-DashBoard", component: exDashBoard },
   {
@@ -30,6 +40,16 @@ const routes = [
     path: "/transition1",
     name: "transition1",
     component: transition1,
+  },
+  {
+    path: "/transition2",
+    name: "transition2",
+    component: transition2,
+  },
+  {
+    path: "/transition3",
+    name: "transition3",
+    component: transition3,
   },
 ];
 const router = new VueRouter({
