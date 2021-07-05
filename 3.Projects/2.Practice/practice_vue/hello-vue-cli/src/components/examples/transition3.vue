@@ -1,102 +1,49 @@
 <template>
-  <div id="transition1">
-    <div>
-      <button @click="show1 = !show1">Toggle1</button>
-      <transition name="fade">
-        <p v-if="show1">Hello</p>
-      </transition>
-    </div>
-    <div>
-      <button @click="show2 = !show2">Toggle2</button>
-      <transition name="slide-fade">
-        <p v-if="show2">Hello</p>
-      </transition>
-    </div>
-    <div>
-      <button @click="show3 = !show3">Toggle show</button>
-      <transition name="bounce">
-        <p v-if="show3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-          facilisis enim libero, at lacinia diam fermentum id. Pellentesque
-          habitant morbi tristique senectus et netus.
-        </p>
-      </transition>
-    </div>
+  <div>
+    <button @click="show = !show">Toggle</button>
+    <transition @before-enter="beforeEnter" @enter="enter" @leave="leave">
+      <p v-if="show">Demo</p>
+    </transition>
   </div>
 </template>
 
 <script>
+import Velocity from "velocity-animate";
 export default {
   data() {
     return {
-      show1: true,
-      show2: true,
-      show3: true,
+      show: false,
     };
+  },
+  methods: {
+    beforeEnter(el) {
+      el.style.opacity = 0;
+      el.style.transformOrigin = "left center";
+    },
+    enter(el, done) {
+      Velocity(el, { opacity: 1, fontSize: "1.4em" }, { duration: 300 });
+      // 두번째 파라미터로 시작값을 강제로 설정해준다.
+      // 그렇지 않으면 0부터 시작함
+      Velocity(el, { fontSize: ["1em", "1.4em"] }, { complete: done });
+
+      Velocity(el, { complete: done });
+    },
+    leave(el, done) {
+      Velocity(el, { translateX: "15px", rotateZ: "50deg" }, { duration: 600 });
+      Velocity(el, { rotateZ: "100deg" }, { loop: 2 });
+      Velocity(
+        el,
+        {
+          rotateZ: "45deg",
+          translateY: "30px",
+          translateX: "30px",
+          opacity: 0,
+        },
+        { complete: done }
+      );
+    },
   },
 };
 </script>
 
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-.slide-fade-enter-active {
-  transition: all 0.3s ease;
-}
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-enter,
-.slide-fade-leave-to {
-  transform: translateX(10px);
-  opacity: 0;
-}
-
-.bounce-enter-active {
-  animation: bounce-in 0.5s;
-}
-.bounce-leave-active {
-  animation: bounce-in 0.5s reverse;
-}
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* style */
-button {
-  border: solid 1px black;
-  width: 100%;
-  padding: 0.5em 0.5rem;
-  box-sizing: border-box;
-  text-align: center;
-  margin-bottom: var(--basic-space);
-}
-#transition1 {
-  margin: 0 auto;
-  width: 60%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-}
-#transition1 div {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-</style>
+<style scoped></style>
