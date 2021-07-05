@@ -2,7 +2,10 @@ export default {
   namespaced: true,
   state: {
     // navbar 메뉴
-
+    navList: [
+      { url: "exDashBoard", title: "Vue 실습 목록1" },
+      { url: "slotParent", title: "Vue 실습 목록2" },
+    ],
     // 예제 목록
     examples: [
       {

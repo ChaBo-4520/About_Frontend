@@ -6,8 +6,15 @@
       </span>
     </div>
     <ul id="menu">
-      <li class="nav-button" @click="goVue1">Vue 실습 목록1</li>
-      <li class="nav-button" @click="goVue2">Vue 실습 목록2</li>
+      <li
+        v-for="(menu, idx) in navList"
+        :key="idx"
+        @click="goMenu(idx)"
+        class="nav-button"
+        :class="{ on: selectedMenu[idx + 1] }"
+      >
+        {{ menu.title }}
+      </li>
     </ul>
     <ul id="sns">
       <li>
@@ -21,32 +28,30 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
-      selectedMenu: 0,
+      selectedMenu: [0, 0, 0],
     };
   },
   methods: {
     goHome() {
       // router를 import하고 router.push()
       this.$router.push("/");
-      this.selectedMenu = 0;
+      this.selectedMenu = [0, 0, 0];
+      this.selectedMenu[0] = 1;
 
       // Vuerouter 인스턴스를 router라는 변수명으로 선언했기 떄문에 this.$router로 접근할 수 있다.
     },
-    goVue1() {
-      // this.$router.push({ name: "slotParent" });
-      this.$router.push("exDashBoard");
-      this.selectedMenu = 1;
-    },
-    goVue2() {
-      this.$router.push("slotParent");
-      this.selectedMenu = 2;
+    goMenu(idx) {
+      this.selectedMenu = [0, 0, 0];
+      this.$router.push(this.navList[idx].url);
+      this.selectedMenu[idx + 1] = 1;
     },
   },
-  updated() {
-    console.log("변화!");
+  computed: {
+    ...mapState("main", ["navList"]),
   },
 };
 </script>
@@ -102,6 +107,12 @@ export default {
   color: var(--primary-color);
 }
 #nav-bar > #menu > li:hover::after {
+  width: 100%;
+}
+#nav-bar > #menu > li.on {
+  color: var(--primary-color);
+}
+#nav-bar > #menu > li.on::after {
   width: 100%;
 }
 #nav-bar > #sns {
