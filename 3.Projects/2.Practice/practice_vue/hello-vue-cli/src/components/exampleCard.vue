@@ -1,12 +1,27 @@
 <template>
   <div class="wrapper">
-    <span>{{ title }}</span>
+    <div @click="goToContent" class="content">
+      <span>{{ content.title }}</span>
+    </div>
   </div>
 </template>
 <script>
 export default {
   props: {
-    title: String,
+    example: Object,
+  },
+  data() {
+    return {
+      content: {
+        title: this.example.title,
+        url: this.example.name,
+      },
+    };
+  },
+  methods: {
+    goToContent() {
+      this.$router.push(this.content.url);
+    },
   },
 };
 </script>
@@ -18,6 +33,33 @@ export default {
   width: 100%;
   align-items: center;
   justify-content: center;
-  font-size: 4em;
+}
+.content {
+  height: 90%;
+  width: 90%;
+  border-radius: 2%;
+  border: solid 1px black;
+  background-color: white;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 3%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--annimation-duration) ease;
+}
+.content:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.content > span {
+  font-size: 1.5em;
+  text-align: center;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 </style>

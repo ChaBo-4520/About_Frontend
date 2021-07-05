@@ -1,10 +1,11 @@
 <template>
   <div id="app-wrapper">
     <app-header></app-header>
-    <router-view></router-view>
+    <router-view id="app-body"></router-view>
   </div>
 </template>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 <script>
 import appHeader from "./components/appHeader.vue";
 export default {
@@ -21,9 +22,14 @@ export default {
   --dark-font-color: #000a12;
   --font-color: #263238;
   --light-font-color: #4f5b62;
+
+  --annimation-duration: 300ms;
 }
 #app-wrapper {
   height: 100vh;
   width: 100vw;
+}
+#app-body {
+  padding: 1em;
 }
 </style>

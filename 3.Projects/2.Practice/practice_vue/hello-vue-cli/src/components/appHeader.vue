@@ -101,8 +101,6 @@ export default {
   font-size: 1.5em;
   display: flex;
 }
-#nav-bar > #sns > ul {
-}
 #sns > li {
   font-size: 2em;
   margin: 0 0.25em;
