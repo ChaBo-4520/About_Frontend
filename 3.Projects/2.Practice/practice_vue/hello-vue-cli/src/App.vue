@@ -26,7 +26,8 @@ export default {
 }
 #app-wrapper {
   height: 100vh;
-  width: 100vw;
+  /* width: calc(100vw- (100vw - 100%)); */
+  width: 100%;
 }
 #app-body {
   padding: 1em;
