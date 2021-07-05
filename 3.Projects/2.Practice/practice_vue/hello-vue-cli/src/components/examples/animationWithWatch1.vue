@@ -27,4 +27,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+input {
+  border: solid 1px black;
+}
+</style>

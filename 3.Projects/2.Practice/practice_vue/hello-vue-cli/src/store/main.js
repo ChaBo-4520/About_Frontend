@@ -21,6 +21,10 @@ export default {
         name: "staggeringList",
       },
       {
+        title: "transition1",
+        name: "transition1",
+      },
+      {
         title: "animation-with-watch2",
         name: "animationWithWatch2",
       },

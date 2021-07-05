@@ -5,6 +5,7 @@ import exDashBoard from "../views/exampleDashBoard";
 import animationWithWatch1 from "../components/examples/animationWithWatch1";
 import animationWithWatch2 from "../components/examples/animationWithWatch2";
 import staggeringList from "../components/examples/staggeringList";
+import transition1 from "../components/examples/transition1";
 
 Vue.use(VueRouter);
 const routes = [
@@ -24,6 +25,11 @@ const routes = [
     path: "/staggeringList",
     name: "staggering-list",
     component: staggeringList,
+  },
+  {
+    path: "/transition1",
+    name: "transition1",
+    component: transition1,
   },
 ];
 const router = new VueRouter({
