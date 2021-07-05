@@ -47,7 +47,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform var(--annimation-duration) ease;
+  transition: transform var(--animation-duration) ease;
 }
 .content:hover {
   cursor: pointer;

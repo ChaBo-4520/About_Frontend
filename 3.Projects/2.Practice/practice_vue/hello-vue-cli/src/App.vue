@@ -22,7 +22,7 @@ export default {
   --font-color: #263238;
   --light-font-color: #4f5b62;
 
-  --annimation-duration: 300ms;
+  --animation-duration: 300ms;
 }
 #app-wrapper {
   height: 100vh;
