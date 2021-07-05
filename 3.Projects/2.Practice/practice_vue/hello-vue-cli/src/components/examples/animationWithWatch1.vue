@@ -2,7 +2,6 @@
   <div id="animated-number-demo">
     <input v-model.number="number" type="number" step="20" />
     <p>{{ animatedNumber }}</p>
-    <input type="text" placeholder="여기입력하세요!!!" />
   </div>
 </template>
 

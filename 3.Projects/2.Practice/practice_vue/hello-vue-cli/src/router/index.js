@@ -4,6 +4,7 @@ import slotParent from "../views/slotParent";
 import exDashBoard from "../views/exampleDashBoard";
 import animationWithWatch1 from "../components/examples/animationWithWatch1";
 import animationWithWatch2 from "../components/examples/animationWithWatch2";
+import staggeringList from "../components/examples/staggeringList";
 
 Vue.use(VueRouter);
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
     path: "/animationWithWatch2",
     name: "animation-with-watch2",
     component: animationWithWatch2,
+  },
+  {
+    path: "/staggeringList",
+    name: "staggering-list",
+    component: staggeringList,
   },
 ];
 const router = new VueRouter({

@@ -23,23 +23,30 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      selectedMenu: 0,
+    };
   },
   methods: {
     goHome() {
-      console.log("클릭!");
       // router를 import하고 router.push()
       this.$router.push("/");
+      this.selectedMenu = 0;
 
       // Vuerouter 인스턴스를 router라는 변수명으로 선언했기 떄문에 this.$router로 접근할 수 있다.
     },
     goVue1() {
       // this.$router.push({ name: "slotParent" });
-      this.$router.push("slotParent");
+      this.$router.push("exDashBoard");
+      this.selectedMenu = 1;
     },
     goVue2() {
-      this.$router.push("exDashBoard");
+      this.$router.push("slotParent");
+      this.selectedMenu = 2;
     },
+  },
+  updated() {
+    console.log("변화!");
   },
 };
 </script>

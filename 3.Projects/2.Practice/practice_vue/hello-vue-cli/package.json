@@ -15,6 +15,7 @@
     "@fortawesome/vue-fontawesome": "^2.0.0",
     "core-js": "^3.6.5",
     "gsap": "^3.7.0",
+    "velocity-animate": "^1.5.2",
     "vue": "^2.6.11",
     "vue-router": "^3.5.2",
     "vuetify": "^2.5.6",

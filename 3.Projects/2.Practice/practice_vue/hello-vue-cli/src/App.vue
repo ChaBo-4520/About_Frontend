@@ -1,7 +1,9 @@
 <template>
   <div id="app-wrapper">
     <app-header></app-header>
-    <router-view id="app-body"></router-view>
+    <div id="app-body">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -23,6 +25,8 @@ export default {
   --light-font-color: #4f5b62;
 
   --animation-duration: 300ms;
+
+  --basic-space: 1em;
 }
 #app-wrapper {
   height: 100vh;
@@ -30,6 +34,6 @@ export default {
   width: 100%;
 }
 #app-body {
-  padding: 1em;
+  padding: var(--basic-space);
 }
 </style>

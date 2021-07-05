@@ -1,7 +1,9 @@
 export default {
   namespaced: true,
   state: {
-    test: 1,
+    // navbar 메뉴
+
+    // 예제 목록
     examples: [
       {
         title: "animation-with-watch1",
@@ -12,8 +14,8 @@ export default {
         name: "animationWithWatch2",
       },
       {
-        title: "animation-with-watch2",
-        name: "animationWithWatch2",
+        title: "staggering-list",
+        name: "staggeringList",
       },
       {
         title: "animation-with-watch2",
