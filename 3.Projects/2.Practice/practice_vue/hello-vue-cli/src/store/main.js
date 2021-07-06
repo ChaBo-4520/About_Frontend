@@ -32,6 +32,10 @@ export default {
         title: "transition3",
         name: "transition3",
       },
+      {
+        title: "watch-vs-computed1",
+        name: "watchVsComputed1",
+      },
     ],
   },
 };

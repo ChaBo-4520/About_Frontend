@@ -8,8 +8,8 @@ import staggeringList from "../components/examples/staggeringList";
 import transition1 from "../components/examples/transition1";
 import transition2 from "../components/examples/transition2";
 import transition3 from "../components/examples/transition3";
+import watchVsComputed1 from "../components/examples/watchVsComputed1";
 import HelloWorld from "../components/HelloWorld";
-
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(() => {
@@ -50,6 +50,11 @@ const routes = [
     path: "/transition3",
     name: "transition3",
     component: transition3,
+  },
+  {
+    path: "/watchVsComputed1",
+    name: "watch-vs-computed1",
+    component: watchVsComputed1,
   },
 ];
 const router = new VueRouter({
