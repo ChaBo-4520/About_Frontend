@@ -9,6 +9,7 @@ import transition1 from "../components/examples/transition1";
 import transition2 from "../components/examples/transition2";
 import transition3 from "../components/examples/transition3";
 import watchVsComputed1 from "../components/examples/watchVsComputed1";
+import watchDeep from "../components/examples/watchDeep";
 import HelloWorld from "../components/HelloWorld";
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
@@ -55,6 +56,11 @@ const routes = [
     path: "/watchVsComputed1",
     name: "watch-vs-computed1",
     component: watchVsComputed1,
+  },
+  {
+    path: "/watchDeep",
+    name: "watch-Deep",
+    component: watchDeep,
   },
 ];
 const router = new VueRouter({

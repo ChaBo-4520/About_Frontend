@@ -36,6 +36,10 @@ export default {
         title: "watch-vs-computed1",
         name: "watchVsComputed1",
       },
+      {
+        title: "watch-deep",
+        name: "watchDeep",
+      },
     ],
   },
 };
