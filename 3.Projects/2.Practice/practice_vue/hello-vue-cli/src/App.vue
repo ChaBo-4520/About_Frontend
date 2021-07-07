@@ -34,6 +34,8 @@ export default {
   width: 100%;
 }
 #app-body {
-  padding: var(--basic-space);
+  padding-left: var(--basic-space);
+  padding-right: var(--basic-space);
+  margin-top: var(--basic-space);
 }
 </style>

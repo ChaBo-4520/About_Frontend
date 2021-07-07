@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #keepAliveParent {
   width: 100%;
   display: flex;
@@ -43,5 +43,8 @@ export default {
   width: 40%;
   min-width: 35em;
   display: flex;
+}
+* {
+  margin-top: calc(var(--basic-space) / 2);
 }
 </style>

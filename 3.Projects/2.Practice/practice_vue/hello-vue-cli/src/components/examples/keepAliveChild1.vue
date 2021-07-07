@@ -1,9 +1,11 @@
 <template>
   <div>
     <h2>Child1</h2>
-    <input type="radio" name="1" />
-    <input type="radio" name="1" />
-    <input type="radio" name="1" />
+    <div class="inputs">
+      <input type="radio" name="1" />
+      <input type="radio" name="1" />
+      <input type="radio" name="1" />
+    </div>
   </div>
 </template>
 
@@ -11,4 +13,12 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+.inputs input {
+  margin-top: calc(var(--basic-space) / 2);
+}
+</style>
