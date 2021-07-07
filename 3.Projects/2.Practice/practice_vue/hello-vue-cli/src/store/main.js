@@ -44,6 +44,10 @@ export default {
         title: "computed",
         name: "computed",
       },
+      {
+        title: "keep-alive-parent",
+        name: "keepAliveParent",
+      },
     ],
   },
 };
