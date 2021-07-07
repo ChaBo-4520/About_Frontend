@@ -40,6 +40,10 @@ export default {
         title: "watch-deep",
         name: "watchDeep",
       },
+      {
+        title: "computed",
+        name: "computed",
+      },
     ],
   },
 };
