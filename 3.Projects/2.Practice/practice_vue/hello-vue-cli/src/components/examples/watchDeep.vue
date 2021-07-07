@@ -2,18 +2,18 @@
   <div>
     <h3>Object 안의 값의 변경을 감지하기 위해서는 Deep옵션을 사용해야 한다.</h3>
     <h4>카운트가 0이되면 Alert창이 뜹니다.</h4>
-    <button @click="reset">
+    <v-btn @click="reset">
       리셋
-    </button>
+    </v-btn>
     <div class="wrapper">
       <div>
         <h4>watch with deep</h4>
-        <button @click="decreaseWithDeep">카운트감소</button>
+        <v-btn @click="decreaseWithDeep">카운트감소</v-btn>
         <p>{{ countWithDeep.value }}</p>
       </div>
       <div>
         <h4>watch without deep</h4>
-        <button @click="decreaseWithoutDeep">카운트감소</button>
+        <v-btn @click="decreaseWithoutDeep">카운트감소</v-btn>
 
         <p>{{ countWithoutDeep.value }}</p>
       </div>
@@ -70,9 +70,6 @@ export default {
 <style scoped>
 * {
   margin-bottom: var(--basic-space);
-}
-button {
-  border: solid 1px black;
 }
 .wrapper {
   display: flex;

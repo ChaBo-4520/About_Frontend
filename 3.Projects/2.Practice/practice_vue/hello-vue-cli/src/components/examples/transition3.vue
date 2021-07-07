@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="show = !show">Toggle</button>
+    <v-btn @click="show = !show">Toggle</v-btn>
     <transition @before-enter="beforeEnter" @enter="enter" @leave="leave">
       <p v-if="show">Demo</p>
     </transition>

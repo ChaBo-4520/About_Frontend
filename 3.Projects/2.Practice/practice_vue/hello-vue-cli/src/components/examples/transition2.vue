@@ -1,6 +1,6 @@
 <template>
   <div id="transition2">
-    <button @click="show = !show">Toggle render</button>
+    <v-btn @click="show = !show">Toggle render</v-btn>
     <!-- Animation 종류 -->
     <!-- https://animate.style/ -->
     <transition

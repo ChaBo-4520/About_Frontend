@@ -39,6 +39,7 @@ export default {
   width: 90%;
   border-radius: 2%;
   border: solid 1px black;
+  box-shadow: 0.2em 0.2em 0.0125em 0.125em gray;
   background-color: white;
   box-sizing: border-box;
   margin: 0 auto;
