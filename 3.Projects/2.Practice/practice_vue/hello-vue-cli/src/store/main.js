@@ -52,6 +52,10 @@ export default {
         title: "list-transition",
         name: "listTransition",
       },
+      {
+        title: "props-parent",
+        name: "propsParent",
+      },
     ],
   },
 };

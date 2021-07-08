@@ -13,7 +13,9 @@ import watchDeep from "../components/examples/watchDeep";
 import computed from "../components/examples/computed";
 import listTransition from "../components/examples/listTransition";
 import keepAliveParent from "../components/examples/keepAliveParent";
+import propsParent from "../components/examples/propsParent";
 import HelloWorld from "../components/HelloWorld";
+
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(() => {
@@ -79,6 +81,11 @@ const routes = [
     path: "/listTransition",
     name: "list-transition",
     component: listTransition,
+  },
+  {
+    path: "/propsParent",
+    name: "props-parent",
+    component: propsParent,
   },
 ];
 const router = new VueRouter({

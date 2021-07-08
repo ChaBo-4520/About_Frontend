@@ -27,6 +27,7 @@ export default {
   --animation-duration: 300ms;
 
   --basic-space: 1em;
+  --basic-space-small: 0.5em;
 }
 #app-wrapper {
   height: 100vh;
