@@ -8,6 +8,7 @@ import staggeringList from "../components/examples/staggeringList";
 import transition1 from "../components/examples/transition1";
 import transition2 from "../components/examples/transition2";
 import transition3 from "../components/examples/transition3";
+import transitionBetweenElement from "../components/examples/transitionBetweenElement";
 import watchVsComputed1 from "../components/examples/watchVsComputed1";
 import watchDeep from "../components/examples/watchDeep";
 import computed from "../components/examples/computed";
@@ -92,6 +93,11 @@ const routes = [
     path: "/pseudoClass",
     name: "pseudo-class",
     component: pseudoClass,
+  },
+  {
+    path: "/transitionBetweenElement",
+    name: "transition-between-element",
+    component: transitionBetweenElement,
   },
 ];
 const router = new VueRouter({

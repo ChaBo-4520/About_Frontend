@@ -33,6 +33,10 @@ export default {
         name: "transition3",
       },
       {
+        title: "TransitionBetweenElement",
+        name: "transitionBetweenElement",
+      },
+      {
         title: "Watch-vs-computed1",
         name: "watchVsComputed1",
       },
