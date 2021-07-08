@@ -11,6 +11,7 @@ import transition3 from "../components/examples/transition3";
 import watchVsComputed1 from "../components/examples/watchVsComputed1";
 import watchDeep from "../components/examples/watchDeep";
 import computed from "../components/examples/computed";
+import listTransition from "../components/examples/listTransition";
 import keepAliveParent from "../components/examples/keepAliveParent";
 import HelloWorld from "../components/HelloWorld";
 const originalPush = VueRouter.prototype.push;
@@ -73,6 +74,11 @@ const routes = [
     path: "/keepAliveParent",
     name: "keep-alive-parent",
     component: keepAliveParent,
+  },
+  {
+    path: "/listTransition",
+    name: "list-transition",
+    component: listTransition,
   },
 ];
 const router = new VueRouter({

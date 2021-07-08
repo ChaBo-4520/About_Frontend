@@ -48,6 +48,10 @@ export default {
         title: "keep-alive-parent",
         name: "keepAliveParent",
       },
+      {
+        title: "list-transition",
+        name: "listTransition",
+      },
     ],
   },
 };
