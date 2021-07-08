@@ -64,6 +64,10 @@ export default {
         title: "PseudoClass",
         name: "pseudoClass",
       },
+      {
+        title: "v-if-with Key",
+        name: "vIfWithKey",
+      },
     ],
   },
 };

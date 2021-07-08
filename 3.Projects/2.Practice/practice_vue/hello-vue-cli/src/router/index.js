@@ -16,6 +16,7 @@ import listTransition from "../components/examples/listTransition";
 import keepAliveParent from "../components/examples/keepAliveParent";
 import propsParent from "../components/examples/propsParent";
 import pseudoClass from "../components/examples/pseudoClass";
+import vIfWithKey from "../components/examples/vIfWithKey";
 import HelloWorld from "../components/HelloWorld";
 
 const originalPush = VueRouter.prototype.push;
@@ -98,6 +99,11 @@ const routes = [
     path: "/transitionBetweenElement",
     name: "transition-between-element",
     component: transitionBetweenElement,
+  },
+  {
+    path: "/vIfWithKey",
+    name: "v-if-with-key",
+    component: vIfWithKey,
   },
 ];
 const router = new VueRouter({
