@@ -14,6 +14,7 @@ import computed from "../components/examples/computed";
 import listTransition from "../components/examples/listTransition";
 import keepAliveParent from "../components/examples/keepAliveParent";
 import propsParent from "../components/examples/propsParent";
+import pseudoClass from "../components/examples/pseudoClass";
 import HelloWorld from "../components/HelloWorld";
 
 const originalPush = VueRouter.prototype.push;
@@ -86,6 +87,11 @@ const routes = [
     path: "/propsParent",
     name: "props-parent",
     component: propsParent,
+  },
+  {
+    path: "/pseudoClass",
+    name: "pseudo-class",
+    component: pseudoClass,
   },
 ];
 const router = new VueRouter({

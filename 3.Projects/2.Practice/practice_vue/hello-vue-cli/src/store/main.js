@@ -9,52 +9,56 @@ export default {
     // 예제 목록
     examples: [
       {
-        title: "animation-with-watch1",
+        title: "Animation-with-watch1",
         name: "animationWithWatch1",
       },
       {
-        title: "animation-with-watch2",
+        title: "Animation-with-watch2",
         name: "animationWithWatch2",
       },
       {
-        title: "staggering-list",
+        title: "Staggering-list",
         name: "staggeringList",
       },
       {
-        title: "transition1",
+        title: "Transition1",
         name: "transition1",
       },
       {
-        title: "transition2",
+        title: "Transition2",
         name: "transition2",
       },
       {
-        title: "transition3",
+        title: "Transition3",
         name: "transition3",
       },
       {
-        title: "watch-vs-computed1",
+        title: "Watch-vs-computed1",
         name: "watchVsComputed1",
       },
       {
-        title: "watch-deep",
+        title: "Watch-deep",
         name: "watchDeep",
       },
       {
-        title: "computed",
+        title: "Computed",
         name: "computed",
       },
       {
-        title: "keep-alive-parent",
+        title: "Keep-alive",
         name: "keepAliveParent",
       },
       {
-        title: "list-transition",
+        title: "List-transition",
         name: "listTransition",
       },
       {
-        title: "props-parent",
+        title: "Props",
         name: "propsParent",
+      },
+      {
+        title: "PseudoClass",
+        name: "pseudoClass",
       },
     ],
   },
