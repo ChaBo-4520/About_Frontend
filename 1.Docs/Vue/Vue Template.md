@@ -152,20 +152,31 @@ parent단의 컴포넌트인 todo-item의 props todo에 item값을 전달한다.
 
 #### Filters
 
-화면에 표시되는 텍스트의 형식을 편하게 바꿀 수 있도록 고안된 기능이며 `|` 을 이용하여 여러 개의 필터를 적용할 수 있다.
+> 화면에 표시되는 텍스트의 형식을 편하게 바꿀 수 있도록 고안된 기능
+>
 
 ```html
-<!-- message 값에 capitalize 필터를 적용하여 첫 글자를 대문자로 변경 -->
-{{ message | capitalize }}
-HTMLCopy
-new Vue({
-  filters: {
-    capitalize: function(value) {
-      if (!value) return "";
-      value = value.toString();
-      return value.charAt(0).toUpperCase() + value.slice(1);
-    }
-  }
-});
+<span class="todo-count">
+    <strong class="counting">{{ remains }}</strong>
+    {{ remains | suffix }} left
+</span>
 ```
+
+```js
+...
+filters: {
+    suffix(n) {
+        return n == 1 ? "item" : "items";
+    },
+},
+...
+```
+
+컴포넌트 인스턴스 안에 filters옵션에 suffix필터를 선언했다. 이를 html에서 사용할땐 {{ }}를 이용해서 사용하고 |를 이용해 여러 필터를 적용할 수 있다.
+
+각 필터는 파이프라인처럼 왼쪽의 return값을 첫번째 파라미터로 받는다.
+
+해당 코드에서 remains는 active된 todo의 개수이다. 따라서 suffix는 remains의 값이 1이면 item, 1이 아니면 items를 반환할 것이다.
+
+<img src="../../2.Pictures/filters1.gif">
 
