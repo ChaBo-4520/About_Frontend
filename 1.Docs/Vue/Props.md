@@ -97,6 +97,26 @@ prop은 다음과 같이 사용하는 것이 적절하다.
    }
    ```
 
+#### Prop 타입
+
+prop은 두가지 형태로 선언할 수 있다.
+
+```js
+props:['title', 'likes', 'isPublished', 'commentIds', 'author']
+```
+
+```js
+props: {
+  title: String,
+  likes: Number,
+  isPublished: Boolean,
+  commentIds: Array,
+  author: Object,
+  callback: Function,
+  contactsPromise: Promise // or any other constructor
+}
+```
+
 #### prop 검증
 
 컴포넌트가 받는 중인 prop에 대한 요구사항을 지정할 수 있다. 요구사항이 충족 되지 않으면 Vue에서 경고를 내보낸다. **개발자가 컴포넌트 제작시 사용.**
