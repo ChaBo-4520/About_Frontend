@@ -18,6 +18,7 @@ import propsParent from "../components/examples/propsParent";
 import pseudoClass from "../components/examples/pseudoClass";
 import vIfWithKey from "../components/examples/vIfWithKey";
 import HelloWorld from "../components/HelloWorld";
+import hoisting from "../components/examples/hoisting";
 
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
@@ -104,6 +105,11 @@ const routes = [
     path: "/vIfWithKey",
     name: "v-if-with-key",
     component: vIfWithKey,
+  },
+  {
+    path: "/hoisting",
+    name: "hoisting",
+    component: hoisting,
   },
 ];
 const router = new VueRouter({

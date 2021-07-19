@@ -68,6 +68,10 @@ export default {
         title: "v-if-with Key",
         name: "vIfWithKey",
       },
+      {
+        title: "Hoisting",
+        name: "hoisting",
+      },
     ],
   },
 };
