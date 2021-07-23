@@ -821,7 +821,7 @@ callback함수 : 함수의 parameter로 넘긴 함수를 나중에 실행시키�
 
 Javascript는 synchronous하다. 코드 순서대로 차례대로 실행된다는 뜻(호이스팅된 이후로).
 
-*호이스팅 : var, function declaraion에서 일어나는, 해당 코드를 가장 위로 올리는 동작*
+*호이스팅 : var, function declaration(함수 선언식)에서 일어나는, 해당 코드를 가장 위로 올리는 동작*
 
 **asynchronous**
 
