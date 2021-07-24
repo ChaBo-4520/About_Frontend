@@ -17,11 +17,12 @@
       </li>
     </ul>
     <ul id="sns">
-      <li>
-        <font-awesome-icon :icon="['fab', 'instagram']"></font-awesome-icon>
-      </li>
-      <li>
-        <font-awesome-icon :icon="['fab', 'facebook']"></font-awesome-icon>
+      <li
+        v-for="(snsInfo, idx) in snsInfoArray"
+        :key="idx"
+        @click="goSns(snsInfo.url)"
+      >
+        <font-awesome-icon :icon="snsInfo.icon"> </font-awesome-icon>
       </li>
     </ul>
   </div>
@@ -33,6 +34,20 @@ export default {
   data() {
     return {
       selectedMenu: [1, 0, 0],
+      snsInfoArray: [
+        {
+          icon: ["fab", "instagram"],
+          url: "https://www.instagram.com/from.boram_/",
+        },
+        {
+          icon: ["fas", "code"],
+          url: "https://www.acmicpc.net/user/ckqhfka4520",
+        },
+        {
+          icon: ["fab", "github"],
+          url: "https://github.com/ChaBo-4520",
+        },
+      ],
     };
   },
   methods: {
@@ -48,6 +63,9 @@ export default {
       this.selectedMenu = [0, 0, 0];
       this.$router.push(this.navList[idx].url);
       this.selectedMenu[idx + 1] = 1;
+    },
+    goSns(url) {
+      window.open(url);
     },
   },
   computed: {
@@ -122,5 +140,6 @@ export default {
 #sns > li {
   font-size: 2em;
   margin: 0 0.25em;
+  cursor: pointer;
 }
 </style>
