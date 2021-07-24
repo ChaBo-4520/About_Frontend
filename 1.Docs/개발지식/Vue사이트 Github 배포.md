@@ -12,7 +12,7 @@ npm run build
 
 <img src="../../2.Pictures/Vue_build.jpg">
 
-프로젝트를 Build한 후 vue.config.js파일을 root 디렉토리에 생성한다. 그리고 해당 파일에 다음 코드를 작성한다.
+프로젝트를 Build한 후 vue.config.js파일을 root 디렉토리에 생성한다. 그리고 해당 파일에 다음 코드를 작성한다.[참고](https://kabkee.github.io/vue-cli/vue-cli-publicPath/)
 
 ```js
 module.exports={
