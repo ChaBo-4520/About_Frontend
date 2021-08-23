@@ -26,3 +26,8 @@ SPA를 통해 여러 페이지를 보여주기 위한 라우터 역시 React와 
 
 둘다 서버사이드 렌더링용 웹서버 프레임워크가 있다. webpack 기반 자바스크립트이다보니 둘다 nodeJS 기반이다.
 React는 [nextjs](https://nextjs.org/), Vue는 [nuxtjs](https://ko.nuxtjs.org/).
+
+### About 2021
+
+[참고기사](https://ichi.pro/ko/2021-nyeon-react-vs-vue-eotteon-geos-eul-sayonghaeyahabnikka-243684195750587)
+
