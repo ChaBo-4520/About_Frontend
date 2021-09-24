@@ -178,7 +178,7 @@ function Counter(){
 
 **함수 요약**
 
-- `configureStore`: redux에서 제공하던 `createStore`와 같은 store를 생성하지만 인자로 객체를 사용하고 Redux DevTools Extension을 자동으로 설정합니다.
+- `configureStore`: redux에서 제공하던 `createStore`와 같은 store를 생성하지만 인자로 객체를 사용하고 Redux DevTools Extension을 자동으로 설정한다.
 - `createAction`: 액션 타입문자열을 받아 이 타입을 사용하는 액션 생성자 함수를 반환합니다.
-- `createReducer`: 초기 상태값과 reducer함수에 대한 lookup테이블을 받아 이를 처리하는 reducer를 작성합니다.
-- `createSlice`: reducer이름과 함수가 포함된 초기 상태와 lookup테이블을 받아 액션 생성자 함수, 액션 유형 문자열 및 리듀서 함수를 자동으로 생성합니다.
+- `createReducer`: 초기 상태값과 reducer함수에 대한 lookup테이블을 받아 이를 처리하는 reducer를 작성한다.
+- `createSlice`: reducer이름과 함수가 포함된 초기 상태와 lookup테이블을 받아 액션 생성자 함수, 액션 유형 문자열 및 리듀서 함수를 자동으로 생성한다.
